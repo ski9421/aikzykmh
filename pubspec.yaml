@@ -48,6 +48,9 @@ dependencies:
   flutter_easyrefresh: ^2.2.1
   #动画
   flare_flutter: ^3.0.0
+  #视频
+  video_player: ^2.3.0
+
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +78,7 @@ flutter:
   assets:
     - assets/icon/home/
     - assets/image/
+    - assets/image/loading.gif
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

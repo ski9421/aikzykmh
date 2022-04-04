@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       designSize: const Size(1125, 2250),
       builder: () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.Initial,
+        initialRoute: Routes.VIDEOLIST,
         getPages: AppPages.pages,
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:aikzykmh/tool/screen.dart';
 import 'package:flutter/material.dart';
-
 import 'home/home_page.dart';
+import 'video/video_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> pages = const [
     HomePageView(),
     HomePageView(),
-    HomePageView(),
+    VideoHomePage(),
     HomePageView()
   ];
 

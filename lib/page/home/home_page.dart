@@ -21,7 +21,8 @@ class _HomePageViewState extends State<HomePageView> {
         slivers: [
           SliverToBoxAdapter(
             child: Container(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top+Screen.height(30)),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).padding.top + Screen.height(30)),
               height: Screen.height(550),
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
@@ -157,6 +158,97 @@ class _HomePageViewState extends State<HomePageView> {
                     style: TextStyle(fontSize: Screen.size(50)),
                   ),
                 ),
+
+                Container(
+                    margin: EdgeInsets.only(
+                        top: Screen.height(30),
+                        left: Screen.height(30),
+                        right: Screen.height(30)),
+                    height: Screen.height(980),
+                    child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: GridView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  childAspectRatio: 0.7),
+                          itemCount: 6,
+                          itemBuilder: (c, i) {
+                            return Container(
+                              child: Flex(
+                                direction: Axis.vertical,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        image: const DecorationImage(
+                                            image: NetworkImage(
+                                                'https://manhua.acimg.cn/vertical/0/21_14_19_152a687976add4668a09152838acc690_1532153983992.jpg/0'),
+                                            fit: BoxFit.fill),
+                                        borderRadius: BorderRadius.circular(
+                                            Screen.height(20)),
+                                      ),
+                                    ),
+                                    flex: 6,
+                                  ),
+                                  const Expanded(
+                                    child: Text('漫画名'),
+                                    flex: 1,
+                                  )
+                                ],
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.circular(Screen.height(20)),
+                                // color: Colors.deepPurpleAccent,
+                              ),
+                            );
+                          }),
+                    )),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: Screen.height(30),
+                      left: Screen.height(30),
+                      right: Screen.height(30)),
+                  height: Screen.height(260),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Screen.height(30)),
+                      color: Colors.deepPurpleAccent,
+                      image: const DecorationImage(
+                          image: AssetImage('assets/image/tm.png'),
+                          fit: BoxFit.fill)),
+                ),
+                Container(
+                  height: Screen.height(100),
+                  margin: EdgeInsets.all(Screen.height(30)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Screen.height(50)),
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  child: const Center(
+                    child: Text('更多新品漫画点击查看'),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Container(
+                  margin: EdgeInsets.only(
+                      left: Screen.width(30), right: Screen.width(30)),
+                  height: Screen.height(80),
+                  child: Text(
+                    '热门漫画～',
+                    style: TextStyle(fontSize: Screen.size(50)),
+                  ),
+                ),
                 Container(
                   margin: EdgeInsets.only(
                       top: Screen.height(30),
@@ -200,7 +292,8 @@ class _HomePageViewState extends State<HomePageView> {
                                             image: NetworkImage(
                                                 'https://manhua.acimg.cn/vertical/0/21_14_19_152a687976add4668a09152838acc690_1532153983992.jpg/0'),
                                             fit: BoxFit.fill),
-                                        borderRadius: BorderRadius.circular(Screen.height(20)),
+                                        borderRadius: BorderRadius.circular(
+                                            Screen.height(20)),
                                       ),
                                     ),
                                     flex: 6,
@@ -230,57 +323,6 @@ class _HomePageViewState extends State<HomePageView> {
                     child: Text('更多新品漫画点击查看'),
                   ),
                 ),
-              ],
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Container(
-                  margin: EdgeInsets.only(
-                      left: Screen.width(30), right: Screen.width(30)),
-                  height: Screen.height(60),
-                  child: Text(
-                    '新漫上架～客官看这里',
-                    style: TextStyle(fontSize: Screen.size(50)),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: Screen.height(30),
-                      left: Screen.height(30),
-                      right: Screen.height(30)),
-                  height: Screen.height(260),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Screen.height(30)),
-                    color: Colors.deepPurpleAccent,
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.all(Screen.height(30)),
-                    height: Screen.height(810),
-                    child: MediaQuery.removePadding(
-                      context: context, removeTop: true,
-                      child: GridView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  crossAxisSpacing: 10,
-                                  mainAxisSpacing: 10,
-                                  childAspectRatio: 0.8),
-                          itemCount: 6,
-                          itemBuilder: (c, i) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.circular(Screen.height(20)),
-                                color: Colors.deepPurpleAccent,
-                              ),
-                            );
-                          }),
-                      // height: Screen.height(600),
-                    )),
               ],
             ),
           ),

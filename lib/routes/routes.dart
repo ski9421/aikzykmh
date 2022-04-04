@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import '../page/home_page.dart';
-
+import '../page/video/particulars.dart';
+import '../page/video/video_list.dart';
 
 abstract class AppPages {
   static final pages = [
@@ -8,6 +9,14 @@ abstract class AppPages {
       name: Routes.Initial,
       page: () => const HomePage(),
     ),
+    GetPage(
+        name: Routes.PARTICULARS,
+        page: () => const Particulars(),
+        transition: Transition.downToUp),
+    GetPage(
+        name: Routes.VIDEOLIST,
+        page: () => const VideoList(),
+        transition: Transition.downToUp),
     // GetPage(
     //   name: Routes.SEARCH,
     //   page: () => const SearchView(),
@@ -31,4 +40,6 @@ abstract class Routes {
   static const SEARCH = '/search';
   static const COMIC = '/comic';
   static const CHAPTER = '/chapter';
+  static const PARTICULARS = '/particulars';
+  static const VIDEOLIST = '/videoList';
 }
